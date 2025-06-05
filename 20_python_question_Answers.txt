@@ -1,0 +1,292 @@
+1)   Script with a function to add two numbers and return the result. Use the function and show the input values and the result :
+
+# Function to add two numbers
+def add_number (num1, num2):
+    sum_result = num1 + num2 
+    return sum_result
+
+# input from user
+number1 = float(input("Enter first number: "))
+number2 = float(input("Enter second number: "))
+
+# call the add_number Function 
+result = add_number (number1, number2)
+print (f"The Sum of the {number1} and {number2} is : {result}")
+--------------------------------------------------------------------------------------------------------------------------------
+2)  Use the string “The quick brown fox jumps over the lazy dog” and print all but the last two characters.
+A = 'The quick brown fox jumps over the lazy dog'
+print (A[0:41])
+--------------------------------------------------------------------------------------------------------------------------------
+3)  Print the string but all character in upper case
+	A = 'The quick brown fox jumps over the lazy dog'
+	print (A.upper())
+-------------------------------------------------------------------------------------------------------------------------------
+4) Convert the string into a list of all words
+
+def string_to_word_list(input_string):
+    # Split the string into words using whitespace as the delimiter
+    word_list = input_string.split()
+    return word_list
+# Example usage
+input_string = "Convert the string into a list of all words"
+word_list = string_to_word_list(input_string)
+print(word_list)
+-------------------------------------------------------------------------------------------------------------------------------
+5)  Print the entire list of words, then iterate over element of the list and print the elements (words) individually.
+
+def string_to_word_list(input_string):
+    # Split the string into words using whitespace as the delimiter
+    word_list = input_string.split()
+    return word_list
+# Example usage
+input_string = "Convert the string into a list of all words"
+word_list = string_to_word_list(input_string)
+# Print the entire list of words
+print("List of words:", word_list)
+# Iterate over each element of the list and print the elements (words) individually
+print("Individual words:")
+for word in word_list:
+    print(word)
+-------------------------------------------------------------------------------------------------------------------------------
+6)  Print how many characters are in a string
+
+def count_characters(input_string):
+    # Count the number of characters in the string
+    num_characters = len(input_string)
+    return num_characters
+# Example usage
+input_string = "Convert the string into a list of all words"
+num_characters = count_characters(input_string)
+print(f"The number of characters in the string is: {num_characters}")
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+7)  Print how many items are in a list
+
+def count_items_in_list(input_list):
+    # Count the number of items in the list
+    num_items = len(input_list)
+    return num_items
+# Example usage
+input_list = ['Convert', 'the', 'string', 'into', 'a', 'list', 'of', 'all', 'words']
+num_items = count_items_in_list(input_list)
+print(f"The number of items in the list is: {num_items}")
+-------------------------------------------------------------------------------------------------------------------------------
+8)  Print every second item in the list of words
+
+def print_every_second_item(word_list):
+    # Iterate over the list and print every second item
+    for i in range(1, len(word_list), 2):
+        print(word_list[i])
+# Example usage
+input_list = ['Convert', 'the', 'string', 'into', 'a', 'list', 'of', 'all', 'words']
+print("Every second item in the list:")
+print_every_second_item(input_list)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+9)  Print all words of the list which are three characters long
+
+def print_three_char_words(word_list):
+    # Iterate over the list and print words that are three characters long
+    for word in word_list:
+        if len(word) == 3:
+            print(word)
+# Example usage
+input_list = ['Convert', 'the', 'string', 'into', 'a', 'list', 'of', 'all', 'words']
+print("Words that are three characters long:")
+print_three_char_words(input_list)
+
+-------------------------------------------------------------------------------------------------------------------------------
+10)  Print all words that contain the character “o”
+
+def print_words_with_o(word_list):
+    # Iterate over the list and print words that contain the character 'o'
+    for word in word_list:
+        if 'o' in word:
+            print(word)
+# Example usage
+input_list = ['Convert', 'the', 'string', 'into', 'a', 'list', 'of', 'all', 'words']
+print("Words that contain the character 'o':")
+print_words_with_o(input_list)
+
+-------------------------------------------------------------------------------------------------------------------------------
+11)  A function that takes a string as a parameter and prints a timestamp in format YYYY-mm-dd HH:MM:SS followed by the given string
+
+from datetime import datetime
+def print_timestamped_string(input_string):
+    # Get the current timestamp
+    current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # Print the timestamp followed by the input string
+    print(f"{current_timestamp} {input_string}")
+# Example usage
+input_string = "This is a sample string."
+print_timestamped_string(input_string)
+
+-------------------------------------------------------------------------------------------------------------------------------
+12)    A function that takes a multiline string as a parameter and prints each line with a timestamp in format YYYY-mm-dd HH:MM:SS followed by each line of the given string
+
+from datetime import datetime
+def print_timestamped_string(input_string):
+    # Get the current timestamp
+    current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    # Print the timestamp followed by the input string
+    print(f"{current_timestamp} {input_string}")
+# Example usage
+input_string = "This is a sample string."
+print_timestamped_string(input_string)
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+13)    Script to execute the shell command cat /etc/*release* and show the result lines
+
+import subprocess
+def execute_shell_command():
+    # Execute the shell command
+    result = subprocess.run(['cat', '/etc/*release*'], capture_output=True, text=True)
+    # Print the result lines
+    print(result.stdout)
+# Example usage
+execute_shell_command()
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+14)    Use your function to print multiline strings to show the lines of the exercise to print the result of the shell command cat /etc/*release*
+
+import subprocess
+def execute_shell_command():
+    # Execute the shell command
+    result = subprocess.run(['cat', '/etc/*release*'], capture_output=True, text=True)
+    # Print the result lines as a multiline string
+    print(result.stdout)
+# Example usage
+execute_shell_command()
+
+-------------------------------------------------------------------------------------------------------------------------------
+15)    Script to read a file /proc/cpuinfo and print the number of CPU cores, the CPU model name and processor clock rate
+
+def read_cpu_info():
+    cpu_info = {}
+    num_cores = 0
+    with open('/proc/cpuinfo', 'r') as f:
+        for line in f:
+            if "model name" in line:
+                cpu_info["Model Name"] = line.split(":")[1].strip()
+            elif "cpu MHz" in line:
+                cpu_info["Clock Rate"] = line.split(":")[1].strip() + " MHz"
+            elif "processor" in line:
+                num_cores += 1
+    cpu_info["Number of CPU Cores"] = num_cores
+    return cpu_info
+# Get CPU information
+cpu_info = read_cpu_info()
+# Print CPU information
+print("CPU Information:")
+for key, value in cpu_info.items():
+    print(f"{key}: {value}")
+-------------------------------------------------------------------------------------------------------------------------------
+
+16)    Script to write strings into a file
+
+def write_strings_to_file(file_name, strings):
+    with open(file_name, 'w') as f:
+        for string in strings:
+            f.write(string + '\n')
+# Example usage
+file_name = 'output.txt'
+strings = ["Hello, world!", "This is a sample string.", "Writing strings to a file."]
+write_strings_to_file(file_name, strings)
+print(f"Strings have been written to {file_name}.")
+-------------------------------------------------------------------------------------------------------------------------------
+
+17)    Extend your function to print multi line strings with a leading timestamp and on each call of this function write and append the new lines into a file
+
+from datetime import datetime
+def write_strings_to_file(file_name, strings):
+    with open(file_name, 'a') as f:
+        for string in strings:
+            # Get the current timestamp
+            current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # Create the timestamped string
+            timestamped_string = f"{current_timestamp} {string}"
+            # Print the timestamped string
+            print(timestamped_string)
+            # Write the timestamped string to the file
+            f.write(timestamped_string + '\n')
+# Example usage
+file_name = 'output.txt'
+strings = ["Hello, world!", "This is a sample string.", "Writing strings to a file."]
+write_strings_to_file(file_name, strings)
+print(f"Strings have been written to {file_name}.")
+------------------------------------------------------------------------------------------------------------------------------
+
+18)    A script that takes two arguments, checks if they are numbers and use the function to add two numbers and print the result
+
+import sys
+def add_numbers(a, b):
+    return a + b
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python script.py  ")
+        return
+    try:
+        num1 = float(sys.argv[1])
+        num2 = float(sys.argv[2])
+    except ValueError:
+        print("Both arguments must be numbers.")
+        return
+    result = add_numbers(num1, num2)
+    print(f"The sum of {num1} and {num2} is {result}")
+if __name__ == "__main__":
+    main()
+------------------------------------------------------------------------------------------------------------------------------
+19)    Extend the script to check for the number of arguments given and print according messages when there are more or less arguments given
+
+import sys
+def add_numbers(a, b):
+    return a + b
+def main():
+    if len(sys.argv) < 3:
+        print("Too few arguments. Usage: python script.py  ")
+        return
+    elif len(sys.argv) > 3:
+        print("Too many arguments. Usage: python script.py  ")
+        return
+    try:
+        num1 = float(sys.argv[1])
+        num2 = float(sys.argv[2])
+    except ValueError:
+        print("Both arguments must be numbers.")
+        return
+    result = add_numbers(num1, num2)
+    print(f"The sum of {num1} and {num2} is {result}")
+if __name__ == "__main__":
+    main()
+------------------------------------------------------------------------------------------------------------------------------
+
+20)    A script to print the string  “Running” every second, and the string “Minute” on each new minute, and end at the next 5 minute cycle. (i.e. start at 07:21, end at 07:25)
+
+
+import time
+from datetime import datetime, timedelta
+def next_5_minute_mark(now):
+    # Calculate how many minutes to add to reach the next multiple of 5
+    minutes_to_add = 5 - (now.minute % 5)
+    return (now + timedelta(minutes=minutes_to_add)).replace(second=0, microsecond=0)
+def main():
+    start_time = datetime.now()
+    end_time = next_5_minute_mark(start_time)
+    last_minute = start_time.minute
+    print(f"Script started at {start_time.strftime('%H:%M:%S')}, will end at {end_time.strftime('%H:%M:%S')}")
+    while datetime.now() < end_time:
+        now = datetime.now()
+        if now.minute != last_minute:
+            print("Minute")
+            last_minute = now.minute
+        print("Running")
+        time.sleep(1)
+    print("Finished at 5-minute mark.")
+if __name__ == "__main__":
+    main()
+
+------------------------------------------------------------------------------------------------------------------------------
