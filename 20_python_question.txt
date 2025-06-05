@@ -1,0 +1,20 @@
+1)    Script with a function to add two numbers and return the result. Use the function and show   the input values and the result :
+2)    Use the string “The quick brown fox jumps over the lazy dog” and print all but the last two characters.
+3)    Print the string but all character in upper case
+4)    Convert the string into a list of all words
+5)    Print the entire list of words, then iterate over element of the list and print the elements (words) individually.
+6)    Print how many characters are in a string
+7)    Print how many items are in a list
+8)    Print every second item in the list of words
+9)    Print all words of the list which are three characters long
+10)    Print all words that contain the character “o”
+11)    a function that takes a string as a parameter and prints a timestamp in format YYYY-mm-dd HH:MM:SS followed by the given string
+12)    a function that takes a multiline string as a parameter and prints each line with a timestamp in format YYYY-mm-dd HH:MM:SS followed by each line of the given string
+13)    Script to execute the shell command cat /etc/*release* and show the result lines
+14)    Use your function to print multiline strings to show the lines of the exercise to print the result of the shell command cat /etc/*release*
+15)    Script to read a file /proc/cpuinfo and print the number of CPU cores, the CPU model name and processor clock rate
+16)    Script to write strings into a file
+17)    Extend your function to print multi line strings with a leading timestamp and on each call of this function write and append the new lines into a file
+18)    A script that takes two arguments, checks if they are numbers and use the function to add two numbers and print the result
+19)    Extend the script to check for the number of arguments given and print according messages when there are more or less arguments given
+20)    A script to print the string  “Running” every second, and the string “Minute” on each new minute, and end at the next 5 minute cycle. (i.e. start at 07:21, end at 07:25)
