@@ -1,0 +1,6 @@
+Hello, world!
+This is a sample string.
+Writing strings to a file.
+2025-06-06 18:45:21 Hello, world!
+2025-06-06 18:45:21 This is a sample string.
+2025-06-06 18:45:21 Writing strings to a file.
